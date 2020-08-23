@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,13 +16,31 @@ public class PlayerController : MonoBehaviour
 
     public GameObject particle;
 
+    Vector3 _initialPos;
+    Vector3 _currentPos;
+    float _yOffset;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        count = 0;
+        count = 12;
         SetCountText();
         winText.text = "";
+        // Get y-axis offset
+        _initialPos = transform.position;
+        _yOffset = _initialPos.y - 10;
+    }
+
+    void Update()
+    {
+        // Get current y-axis position
+        _currentPos = transform.position;
+        // Detect if the Player is off the plane, and respawn Scene
+        if (_currentPos.y < _yOffset)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     // Update is called once per frame
@@ -42,22 +61,16 @@ public class PlayerController : MonoBehaviour
             GameObject p = Instantiate(particle, other.gameObject.transform.position, Quaternion.identity) as GameObject;
 
             other.gameObject.SetActive(false);
-            count += 1;
+            count -= 1;
             SetCountText();
 
             Destroy(p, 1.5f);
         }
-
-        if (other.gameObject.CompareTag("Tree"))
-        {
-
-        }
     }
-
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 12)
+        if (count == 0)
         {
             winText.text = "You win!";
         }
