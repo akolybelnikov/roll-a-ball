@@ -4,7 +4,7 @@
 
 ### akolybelnikov3
 
-## Roll a Ball: Foundation level Unity3D game adopted from the [Unity Learning tutorial](https://learn.unity.com/project/roll-a-ball-tutorial?uv=2019.3)
+### Roll a Ball: Foundation level Unity3D game adopted from the [Unity Learning tutorial](https://learn.unity.com/project/roll-a-ball-tutorial?uv=2019.3)
 
 ### Requirements
 
@@ -40,7 +40,22 @@ Destroy(p, 1.5f);
 #### Step 4
 
 - Added SuperBouncy Material to the Walls to make the Player bounce off for better game dynamics
-- Added Chaos GameObject and prefab with 2 Materials
-- Chaos objects move around uncontrollably and obstruct the Player's game
-- If a collision with a Chaos Ball is too hard, the Player might jump beyond the Walls; in this case the Scene is re-spawned
+- Added Chaos GameObject and it's prefab with 2 Materials
+- Chaos Balls move around uncontrollably and obstruct the Player's game
+- If a collision with a Chaos Ball is too hard, the Player might bounce off beyond the Walls; in this case the Scene is re-spawned
 - Changed the logic of the Count: the Player wins once all Pick Ups are collected
+
+### Project Instructions
+
+#### External resources
+
+The project doesn't include any assets/resources acquired outside class.
+
+#### Building and Running the code
+
+The project submission includes a working build of the game.
+To regenerate the build the project should be added in the Unity Hub and opened in the Unity.
+
+#### Grading
+
+To check if the game meets the assignemnt requirements, the project can be run from the executive, or opened in Unity. The project includes only one scene.
