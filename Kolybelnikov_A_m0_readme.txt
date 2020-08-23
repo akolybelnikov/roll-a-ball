@@ -53,9 +53,9 @@ The project doesn't include any assets/resources acquired outside class.
 
 #### Building and Running the code
 
-The project submission includes a working build of the game.
-To regenerate the build the project should be added in the Unity Hub and opened in the Unity.
+The project submission includes a working build of the game with target platform OSX.
+To regenerate the build the project can be added in the Unity Hub and opened in the Unity UI. After project files are re-created from the Project Settings, a new build can be run.
 
 #### Grading
 
-To check if the game meets the assignemnt requirements, the project can be run from the executive, or opened in Unity. The project includes only one scene.
+To check if the game meets the assignemnt requirements, the project can be run from the executive, or opened in Unity UI. The project includes only one scene.
